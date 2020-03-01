@@ -24,8 +24,9 @@ class TestCase(unittest.TestCase):
                 expected = None
             else:
                 expected = math.pi*r**2
-            self.assertEqual(expected, task.circleArea(r))
+            self.assertAlmostEqual(expected, task.circleArea(r), places=8)
             i = i + 1
 
     if __name__ == '__main__':
         unittest.main()
+
