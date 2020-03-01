@@ -1,5 +1,4 @@
 import math
-import datetime
 
 
 def firstrun():
@@ -27,6 +26,7 @@ def firstAndLast(theList):
         first = theList[0]
         last = theList[size-1]
         return [first, last]
+
 
 def daysBetween(firstDate, secondDate):
     if firstDate == secondDate:
