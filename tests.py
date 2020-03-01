@@ -23,9 +23,8 @@ class TestCase(unittest.TestCase):
             if r < 0:
                 expected = None
             else:
-                expected = math.pi*r^2
+                expected = math.pi*r**2
             self.assertEqual(expected, task.circleArea(r))
-
 
     if __name__ == '__main__':
         unittest.main()
