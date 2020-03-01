@@ -2,6 +2,7 @@ import unittest
 import task
 import random
 import math
+import datetime
 
 
 class TestCase(unittest.TestCase):
@@ -40,6 +41,23 @@ class TestCase(unittest.TestCase):
         list1 = [111, 222, 333, 99]
         expected = [111, 99]
         self.assertEqual(expected, task.firstAndLast(list1))
+
+    def testDaysBetween(self):
+        date1 = datetime.date(2020, 3, 1)
+        date2 = datetime.date(2020, 3, 1)
+        self.assertEqual(0, task.daysBetween(date1, date2))
+        date1 = datetime.date(2020, 3, 1)
+        date2 = datetime.date(2020, 3, 2)
+        self.assertEqual(1, task.daysBetween(date1, date2))
+        date1 = datetime.date(2019, 3, 1)
+        date2 = datetime.date(2020, 3, 1)
+        self.assertEqual(366, task.daysBetween(date1, date2))
+        date1 = datetime.date(2019, 3, 1)
+        date2 = datetime.date(2018, 3, 1)
+        self.assertEqual(365, task.daysBetween(date1, date2))
+        date1 = datetime.date(2019, 12, 31)
+        date2 = datetime.date(2020, 3, 1)
+        self.assertEqual(31+29+1, task.daysBetween(date1, date2))
 
     if __name__ == '__main__':
         unittest.main()
